@@ -12,7 +12,6 @@ suppressPackageStartupMessages(library(leaflet))
 rm(list = ls()) # clear all environment variables
 ```
 
-## Interactive Map
 ### 4/28/2021
 
 ## R Markdown and Leaflet
@@ -25,6 +24,12 @@ Your webpage must contain the date that you created the document, and it must co
 
 
 ```{r, }
+# Open a file to send messages to
+zz <- file("messages.Rout", open = "wt")
+# Divert messages to that file
+sink(zz, type = "message")
+message("not gonna show up in console")
+
 library(leaflet)
 
 m <- leaflet() %>%
